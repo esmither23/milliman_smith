@@ -1,0 +1,37 @@
+---
+title: "workflowethan"
+format: html
+editor: visual
+---
+##Packages
+```{r}
+library(readr)
+library(dplyr)
+```
+##Data Import 
+```{r}
+claims <- read_csv("claims.csv")
+claims
+```
+
+## Data Cleaning
+```{r}
+
+library(ggplot2)
+library(plotly)
+dv1 <- ggplot(claims) +
+ aes(x = DEPARTMENTID) +
+ geom_histogram(bins = 30L, fill = "#112446") +
+ theme_minimal()
+ggplotly(dv1)
+ 
+ 
+```
+
+## Data Vis
+```{r}
+ggplot(claims)
+  aes(x=DEPARTMENTID, y= CLAIMAMOUNT)
+```
+
+
